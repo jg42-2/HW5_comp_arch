@@ -14,3 +14,6 @@ add_executable(rv32sim
   src/loader.cpp
 )
 target_compile_options(rv32sim PRIVATE -Wall -Wextra)
+if(MINGW)
+  target_link_options(rv32sim PRIVATE -static)
+endif()
